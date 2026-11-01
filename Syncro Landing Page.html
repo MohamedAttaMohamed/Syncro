@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Syncro | Connecting Teams. Elevating Work.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F8FAFC;--surface:#fff;--text:#0F172A;--muted:#475569;--primary:#1E3A8A;--brand:#1E3A8A;--accent:#FF6B4A;--accent-ink:#0F172A;--border:#E2E8F0;--glass:rgba(255,255,255,.72);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--surface:#111B33;--text:#E8EEF9;--muted:#A3B1C9;--brand:#9DB8FF;--border:#22304F;--glass:rgba(11,18,32,.72)}}
+:root[data-theme="dark"]{--bg:#0B1220;--surface:#111B33;--text:#E8EEF9;--muted:#A3B1C9;--brand:#9DB8FF;--border:#22304F;--glass:rgba(11,18,32,.72)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 "Bricolage Grotesque",Cairo,system-ui,sans-serif}
+[dir=rtl] body{font-family:Cairo,"Bricolage Grotesque",system-ui,sans-serif}
+h1,h2,h3{line-height:1.12;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,6vw,4.1rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;color:var(--brand)}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.lead{color:var(--muted);max-width:60ch;margin-top:14px}
+.btn{display:inline-block;border:2px solid transparent;border-radius:999px;padding:13px 26px;font:600 1rem inherit;font-family:inherit;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,58,138,.22)}
+.btn-p{background:var(--accent);color:var(--accent-ink)}
+.btn-s{border-color:var(--brand);color:var(--brand);background:transparent}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.5rem;text-decoration:none;color:var(--brand)}
+.logo b{color:var(--accent)}
+.links{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted)}
+.links a:hover{color:var(--brand)}
+@media(max-width:900px){.links{display:none}.nav .btn{padding:10px 16px;font-size:.9rem}}
+.hero{padding:64px 0 88px;background:radial-gradient(900px 400px at 85% 0,rgba(255,107,74,.16),transparent),radial-gradient(800px 400px at 0 20%,rgba(30,58,138,.14),transparent)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.hero .lead{font-size:1.12rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stage{position:relative;min-height:340px;display:grid;place-items:center}
+.stage svg.loop{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.slide{position:relative;width:min(340px,92%);background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:24px;padding:26px;box-shadow:0 24px 60px rgba(30,58,138,.2)}
+.slide .big{font-size:3.4rem;font-weight:800;color:var(--brand);line-height:1}
+.slide .lab{font-weight:600;margin-top:6px}
+.slide .sub{color:var(--muted);font-size:.92rem;margin-top:4px}
+.bar{height:8px;border-radius:8px;background:var(--border);margin-top:18px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:8px;transition:width .6s}
+.dots{position:absolute;bottom:0;display:flex;gap:8px}
+.dots button{width:12px;height:12px;border-radius:50%;border:0;background:var(--border);cursor:pointer;padding:0}
+.dots button[aria-current=true]{background:var(--accent);width:28px;border-radius:8px}
+.grid{display:grid;gap:20px;margin-top:40px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 16px 36px rgba(30,58,138,.14)}
+.ico{font-size:1.9rem;width:54px;height:54px;display:grid;place-items:center;border-radius:16px;background:rgba(255,107,74,.14);margin-bottom:14px}
+.card p{color:var(--muted);margin-top:8px;font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span{font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(30,58,138,.1);color:var(--brand)}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.pkg{display:flex;flex-direction:column;position:relative}
+.pkg.pop{border:2px solid var(--accent);transform:scale(1.03)}
+.pkg.pop:hover{transform:scale(1.03) translateY(-6px)}
+.badge{position:absolute;top:-14px;inset-inline-start:24px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:.82rem;padding:4px 14px;border-radius:99px}
+.tier{font-size:1.4rem;letter-spacing:2px}
+.pkg ul{padding-inline-start:18px;margin:14px 0;color:var(--muted);flex:1}
+.pkg li{margin:5px 0}
+.pkg .key{font-weight:600;margin-bottom:18px}
+.pkg .btn{text-align:center}
+.quiz{max-width:720px;margin:36px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px}
+.prog{display:flex;gap:6px;margin-bottom:20px}
+.prog i{flex:1;height:6px;border-radius:6px;background:var(--border)}
+.prog i.on{background:var(--accent)}
+.opts{display:grid;gap:10px;margin-top:18px}
+.opt{text-align:start;padding:14px 18px;border-radius:14px;border:2px solid var(--border);background:transparent;color:var(--text);font:600 1rem inherit;font-family:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--accent);background:rgba(255,107,74,.08)}
+.res .name{font-size:1.8rem;font-weight:800;color:var(--brand)}
+.stats{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.stat{flex:1 1 200px;text-align:center;padding:24px;border-radius:20px;background:var(--primary);color:#fff}
+.stat b{display:block;font-size:2.6rem;line-height:1.1}
+.stat span{opacity:.9}
+blockquote{margin:0}
+blockquote p{color:var(--text)!important;font-size:1.02rem!important}
+blockquote footer{margin-top:14px;font-weight:600;color:var(--brand);font-size:.9rem}
+form{max-width:760px;margin:36px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){form{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+.full{grid-column:1/-1}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface);color:var(--text)}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+#ok{grid-column:1/-1;padding:16px;border-radius:14px;background:rgba(255,107,74,.14);font-weight:600}
+footer.site{background:#0F172A;color:#CBD5E1;padding:56px 0 32px}
+footer.site .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+@media(max-width:700px){footer.site .wrap{grid-template-columns:1fr}}
+footer.site a{display:block;text-decoration:none;margin:6px 0;color:#CBD5E1}
+footer.site a:hover{color:var(--accent)}
+.foot-b{margin-top:36px;padding-top:20px;border-top:1px solid #22304F;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:.9rem}
+.lang{background:transparent;border:1.5px solid #64748B;color:#fff;border-radius:99px;padding:6px 16px;font:600 .9rem inherit;font-family:inherit;cursor:pointer}
+.soc{display:flex;gap:10px}.soc a{width:38px;height:38px;border:1.5px solid #475569;border-radius:50%;display:grid;place-items:center;margin:0;font-weight:800;font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#home" aria-label="Syncro home"><svg width="44" height="24" viewBox="0 0 88 48" aria-hidden="true"><path d="M44 24C36 8 8 4 8 24s28 20 36 0 36-16 36 0-28 20-36 0" fill="none" stroke="#1E3A8A" stroke-width="8" stroke-linecap="round"/><path d="M44 24C52 40 80 44 80 24" fill="none" stroke="#FF6B4A" stroke-width="8" stroke-linecap="round"/><circle cx="8" cy="6" r="4" fill="#1E3A8A"/><circle cx="80" cy="6" r="4" fill="#FF6B4A"/></svg><span>Syn<b>cro</b></span></a>
+<nav aria-label="Main"><ul class="links">
+<li><a href="#home" data-i="n1">Home</a></li><li><a href="#benefits" data-i="n2">Benefits</a></li><li><a href="#activities" data-i="n3">Activities</a></li><li><a href="#packages" data-i="n4">Service Packages</a></li><li><a href="#about" data-i="n5">About</a></li><li><a href="#contact" data-i="n6">Contact</a></li></ul></nav>
+<a class="btn btn-p" href="#contact" data-i="cta">Book a Discovery Call</a>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap">
+<div>
+<h1 data-i="h1">Bridging Connections, Elevating Team Productivity</h1>
+<p class="lead" data-i="sub">Transform your workplace culture with structured team-building activities, reverse mentoring, and professional skill workshops designed for modern teams.</p>
+<div class="cta-row"><a class="btn btn-p" href="#packages" data-i="c1">View Service Packages</a><a class="btn btn-s" href="#contact" data-i="c2">Schedule a Free Consultation</a></div>
+</div>
+<div class="stage" aria-roledescription="carousel" aria-label="Team collaboration metrics">
+<svg class="loop" viewBox="0 0 400 340" aria-hidden="true"><path d="M200 170C160 60 30 50 30 170s130 110 170 0 170-90 170 0-130 110-170 0" fill="none" stroke="#1E3A8A" stroke-opacity=".3" stroke-width="26" stroke-linecap="round"/><path d="M200 170C240 280 370 290 370 170" fill="none" stroke="#FF6B4A" stroke-opacity=".45" stroke-width="26" stroke-linecap="round"/></svg>
+<div class="slide" id="slide" aria-live="polite"></div>
+<div class="dots" id="dots"></div>
+</div>
+</div></section>
+
+<section id="benefits"><div class="wrap">
+<h2 data-i="bh">Three pillars of a connected workplace</h2>
+<div class="grid g3">
+<div class="card"><div class="ico" aria-hidden="true">🚀</div><h3>Accelerated Onboarding</h3><p>Seamlessly integrate new hires into company culture from their first week.</p></div>
+<div class="card"><div class="ico" aria-hidden="true">🤝</div><h3>Cross-Generational Trust</h3><p>Break communication barriers between seniors and juniors.</p></div>
+<div class="card"><div class="ico" aria-hidden="true">📈</div><h3>Measurable ROI</h3><p>Drive employee retention and overall workplace output.</p></div>
+</div></div></section>
+
+<section class="alt" id="packages"><div class="wrap">
+<h2 data-i="ph">Service packages</h2>
+<p class="lead">Pick the level that fits your team today. Every package builds on the one before it.</p>
+<div class="grid g3" style="align-items:stretch">
+<article class="card pkg"><div class="tier" aria-label="Basic tier">💲</div><h3>Starter / Icebreaker</h3><p>Startups, small teams, or quick monthly icebreakers.</p>
+<ul><li>"Guess Who?" Characteristics Quiz</li><li>"Guess the Country" Clue Challenge</li><li>"Show, Tell &amp; Share" Hobby Exchange</li></ul>
+<div class="key">Fast setup, budget-friendly, minimal prerequisites.</div><a class="btn btn-s" href="#contact" data-pkg="Starter">Choose Starter</a></article>
+<article class="card pkg pop"><span class="badge">Most Popular</span><div class="tier" aria-label="Standard tier">💲💲</div><h3>Team Synergy &amp; Trust</h3><p>Mid-sized companies improving cross-department coordination.</p>
+<ul><li>All Starter activities</li><li>Cumulative Train Challenge</li><li>Two Truths &amp; a Lie (Extended)</li><li>Cultural "Lunch &amp; Learn"</li></ul>
+<div class="key">Builds soft skills, deep empathy, and inter-departmental trust.</div><a class="btn btn-p" href="#contact" data-pkg="Synergy">Choose Synergy</a></article>
+<article class="card pkg"><div class="tier" aria-label="Premium tier">💲💲💲</div><h3>Enterprise &amp; Strategic Growth</h3><p>Enterprise and international companies investing in L&amp;D and retention.</p>
+<ul><li>All Starter and Synergy activities</li><li>Reverse Mentoring Pairs</li><li>Monthly Professional Skill Workshops with expert facilitators and rewards</li></ul>
+<div class="key">End-to-end organizational development and culture transformation.</div><a class="btn btn-s" href="#contact" data-pkg="Enterprise">Choose Enterprise</a></article>
+</div></div></section>
+
+<section id="activities"><div class="wrap">
+<h2 data-i="ah">Eight signature activities</h2>
+<p class="lead">Each one has a clear goal and builds a specific skill. Mix them to match your team.</p>
+<div class="grid g4" id="acts"></div>
+</div></section>
+
+<section class="alt" id="recommender"><div class="wrap">
+<h2 style="text-align:center">Find your package in 3 steps</h2>
+<div class="quiz" id="quiz" aria-live="polite"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<h2>Results HR teams can report</h2>
+<div class="stats"><div class="stat"><b>95%+</b><span>Employee satisfaction</span></div><div class="stat"><b>35%</b><span>Turnover reduction</span></div><div class="stat"><b>500+</b><span>Sessions delivered</span></div></div>
+<div class="grid g3">
+<figure class="card" style="margin:0"><blockquote><p>"Our new hires felt part of the team in days, not months. The reverse mentoring pairs changed how our leads listen."</p><footer>HR Director, Regional Bank (sample quote)</footer></blockquote></figure>
+<figure class="card" style="margin:0"><blockquote><p>"Cross-department friction dropped once teams had a shared language and a few good games behind them."</p><footer>People &amp; Culture Lead, Logistics Group (sample quote)</footer></blockquote></figure>
+<figure class="card" style="margin:0"><blockquote><p>"The monthly workshops are the first L&amp;D program our staff actually ask to attend."</p><footer>Head of L&amp;D, Software Company (sample quote)</footer></blockquote></figure>
+</div></div></section>
+
+<section class="alt" id="contact"><div class="wrap">
+<h2 style="text-align:center">Book your discovery call</h2>
+<p class="lead" style="margin-inline:auto;text-align:center">Tell us about your team and we will reply within one business day.</p>
+<form id="lead">
+<label>Name<input name="name" required autocomplete="name"></label>
+<label>Work email<input name="email" type="email" required autocomplete="email"></label>
+<label>Company name<input name="company" required autocomplete="organization"></label>
+<label>Team size<select name="size" required><option value="">Select size</option><option>1-20</option><option>21-100</option><option>101-500</option><option>500+</option></select></label>
+<label class="full">Interested package<select name="pkg" id="pkgsel"><option>Not sure yet</option><option>Starter</option><option>Synergy</option><option>Enterprise</option></select></label>
+<label class="full">Message<textarea name="msg" rows="4"></textarea></label>
+<button class="btn btn-p full" type="submit">Book a Discovery Call</button>
+<p id="ok" class="full" role="status" hidden></p>
+</form></div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+<div><div class="logo" style="color:#fff">Syn<b>cro</b></div><p style="margin-top:10px" data-i="slog">Connecting Teams. Elevating Work.</p></div>
+<div><strong>Quick links</strong><a href="#benefits">Benefits</a><a href="#activities">Activities</a><a href="#packages">Service Packages</a><a href="#contact">Contact</a></div>
+<div><strong>Follow</strong><div class="soc"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="X">X</a></div></div>
+</div>
+<div class="wrap foot-b"><span>© 2026 Syncro. syncro.co · <a href="#" style="display:inline">Privacy Policy</a></span><button class="lang" id="lang" type="button">العربية</button></div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+/* Hero carousel */
+const M=[["95%+","Employee satisfaction","Across teams after 3 months",95],["35%","Turnover reduction","Among engaged departments",35],["500+","Sessions delivered","Onsite and virtual",80]];
+let mi=0,timer;
+function show(i){mi=i;const m=M[i];$("#slide").innerHTML=`<div class="big">${m[0]}</div><div class="lab">${m[1]}</div><div class="sub">${m[2]}</div><div class="bar"><i style="width:0"></i></div>`;
+requestAnimationFrame(()=>requestAnimationFrame(()=>{const b=$("#slide .bar i");if(b)b.style.width=m[3]+"%"}));
+$("#dots").innerHTML=M.map((_,k)=>`<button aria-label="Show metric ${k+1}" aria-current="${k==i}" data-k="${k}"></button>`).join("")}
+$("#dots").onclick=e=>{const k=e.target.dataset.k;if(k!=null){show(+k);restart()}};
+function restart(){clearInterval(timer);if(!matchMedia("(prefers-reduced-motion:reduce)").matches)timer=setInterval(()=>show((mi+1)%M.length),4500)}
+show(0);restart();
+/* Activities */
+const A=[["🔄","Reverse Mentoring Pairs","Bridge senior and junior perspectives.",["Mentoring","Trust"]],["🕵️","\"Guess Who?\" Quiz","Learn what makes each colleague unique.",["Icebreaker","Empathy"]],["🚂","Cumulative Train","Build a shared story one contribution at a time.",["Collaboration","Memory"]],["🌍","\"Guess the Country\"","Solve clues together to name the country.",["Teamwork","Culture"]],["🎤","\"Show, Tell & Share\"","Swap hobbies and personal stories.",["Communication","Belonging"]],["🍽️","Cultural \"Lunch & Learn\"","Share food and traditions across departments.",["Inclusion","Curiosity"]],["🎓","Monthly Skill Workshops","Expert-led sessions with rewards.",["L&D","Retention"]],["🎭","Two Truths and a Lie","Extended version that trains persuasion and trust.",["Persuasion","Trust"]]];
+$("#acts").innerHTML=A.map(a=>`<article class="card"><div class="ico" aria-hidden="true">${a[0]}</div><h3>${a[1]}</h3><p>${a[2]}</p><div class="tags">${a[3].map(t=>`<span>${t}</span>`).join("")}</div></article>`).join("");
+/* Recommender */
+const Q=[["What is your company size?",["1-50 employees","51-250 employees","250+ employees"]],["What is your primary goal?",["Break the ice and onboard faster","Improve trust between departments","Retain talent and grow skills"]]];
+let ans=[];
+function renderQ(){const s=ans.length,q=$("#quiz");
+if(s<2){q.innerHTML=`<div class="prog">${[0,1,2].map(i=>`<i class="${i<=s?"on":""}"></i>`).join("")}</div><h3>Step ${s+1}: ${Q[s][0]}</h3><div class="opts">${Q[s][1].map((o,i)=>`<button class="opt" data-v="${i}">${o}</button>`).join("")}</div>`;}
+else{const sc=ans[0]+ans[1],p=sc<=1?"Starter":sc<=3?"Synergy":"Enterprise",d={Starter:"Fast, budget-friendly icebreakers for small teams.",Synergy:"Soft skills and cross-department trust for growing companies.",Enterprise:"Reverse mentoring and monthly workshops for full culture change."};
+q.innerHTML=`<div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i></div><div class="res"><p>Step 3: Your recommended package</p><div class="name">${p}</div><p class="lead" style="margin-bottom:20px">${d[p]}</p><a class="btn btn-p" href="#contact" data-pkg="${p}">Book a call about ${p}</a> <button class="btn btn-s" id="redo">Start over</button></div>`;}}
+$("#quiz").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.id=="redo"){ans=[]}else if(b.dataset.v!=null){ans.push(+b.dataset.v)}renderQ()};
+renderQ();
+/* Package preselect */
+document.addEventListener("click",e=>{const a=e.target.closest("[data-pkg]");if(a)$("#pkgsel").value=a.dataset.pkg});
+/* Form (front-end only) */
+$("#lead").onsubmit=e=>{e.preventDefault();const o=$("#ok");o.hidden=false;o.textContent="Thank you, "+e.target.name.value+". We will email you within one business day.";e.target.reset()};
+/* EN / AR */
+const T={n1:["Home","الرئيسية"],n2:["Benefits","المزايا"],n3:["Activities","الأنشطة"],n4:["Service Packages","باقات الخدمة"],n5:["About","من نحن"],n6:["Contact","تواصل معنا"],cta:["Book a Discovery Call","احجز جلسة استشارية"],h1:["Bridging Connections, Elevating Team Productivity","نربط الفرق ونرتقي بإنتاجيتها"],sub:["Transform your workplace culture with structured team-building activities, reverse mentoring, and professional skill workshops designed for modern teams.","حوّل ثقافة العمل لديك بأنشطة منظمة لبناء الفرق، والإرشاد العكسي، وورش المهارات المهنية المصممة للفرق العصرية."],c1:["View Service Packages","استعرض باقات الخدمة"],c2:["Schedule a Free Consultation","احجز استشارة مجانية"],bh:["Three pillars of a connected workplace","ثلاث ركائز لبيئة عمل مترابطة"],ph:["Service packages","باقات الخدمة"],ah:["Eight signature activities","ثمانية أنشطة مميزة"],slog:["Connecting Teams. Elevating Work.","نربط الفرق. نرتقي بالعمل."]};
+let ar=false;
+$("#lang").onclick=()=>{ar=!ar;const h=document.documentElement;h.lang=ar?"ar":"en";h.dir=ar?"rtl":"ltr";document.querySelectorAll("[data-i]").forEach(el=>el.textContent=T[el.dataset.i][+ar]);$("#lang").textContent=ar?"English":"العربية"};
+</script>
+</body>
+</html>
